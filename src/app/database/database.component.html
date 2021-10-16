@@ -1,0 +1,24 @@
+<div class="layout-container">
+  <div class="layout-container-padding">
+    <div class="layout-container-content">
+      <div id="database-selector-box">
+        <div id="database-title">
+          <span><b>Data Tree</b></span>
+        </div>
+
+      </div>
+
+      <div class="sectionContainer">
+      <div id="connection-section-container">
+        <div id="tables-header" (click)="toggleTablesSection()">
+          <span>Connections ({{connectionNames.length}})</span>
+        </div>
+        <div id="connection-section" *ngIf="isTablesSectionExpanded">
+          <app-connection [connections]="connectionNames"></app-connection>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+

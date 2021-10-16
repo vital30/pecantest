@@ -1,0 +1,10 @@
+<div *ngIf="connections" id="tablesContainer">
+    <ul id="table-list">
+      <li *ngFor="let connectionListItem of connections; index as i"  [ngClass]="{'open': selectedTable === connectionListItem && shouldColsExpand}">
+        <!-- <a (click)="updateSelectedTable(tableListItem)" id="table{{i}}{{tableListItem}}">{{tableListItem}}</a> -->
+        <a (click)="getTables(connectionListItem)" id="connections{{i}}{{connectionListItem}}">{{connectionListItem}}</a>
+        <app-tables
+                        [tables]="dbNames"></app-tables>
+      </li>
+    </ul>
+  </div>

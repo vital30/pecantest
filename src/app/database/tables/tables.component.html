@@ -1,0 +1,9 @@
+<div *ngIf="tables" id="tablesContainer">
+  <ul id="table-list">
+    <li *ngFor="let tableListItem of tables; index as i"  [ngClass]="{'open': selectedTable === tableListItem && shouldColsExpand}">
+      <a (click)="updateSelectedTable(tableListItem)" id="table{{i}}{{tableListItem}}">{{tableListItem}}</a>
+      <app-table-cols *ngIf="(selectedTable === tableListItem && shouldColsExpand)"
+                      [columns]="tableCols"></app-table-cols>
+    </li>
+  </ul>
+</div>
